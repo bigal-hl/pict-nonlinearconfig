@@ -15,7 +15,7 @@ const _ViewConfiguration =
 			align-items: center;
 			justify-content: center;
 			min-height: calc(100vh - 112px);
-			background: #f5f7fa;
+			background: var(--theme-color-background-secondary, #f5f7fa);
 		}
 		.nonlinearconfig-login-card {
 			background: var(--theme-color-background-panel, #fff);
@@ -30,12 +30,12 @@ const _ViewConfiguration =
 			margin: 0 0 0.25em 0;
 			font-size: 1.5em;
 			font-weight: 600;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 			text-align: center;
 		}
 		.nonlinearconfig-login-card p {
 			margin: 0 0 1.5em 0;
-			color: #7f8c8d;
+			color: var(--theme-color-text-muted, #7f8c8d);
 			font-size: 0.9em;
 			text-align: center;
 		}
@@ -47,7 +47,7 @@ const _ViewConfiguration =
 			margin-bottom: 0.35em;
 			font-size: 0.85em;
 			font-weight: 600;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-login-field input {
 			display: block;
@@ -61,7 +61,7 @@ const _ViewConfiguration =
 		}
 		.nonlinearconfig-login-field input:focus {
 			outline: none;
-			border-color: #3498db;
+			border-color: var(--theme-color-brand-primary, #3498db);
 			box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
 		}
 		.nonlinearconfig-login-button {
@@ -71,15 +71,17 @@ const _ViewConfiguration =
 			margin-top: 1.25em;
 			font-size: 1em;
 			font-weight: 600;
-			color: var(--theme-color-background-panel, #fff);
-			background-color: #2c3e50;
+			/* text-on-brand falls to a fixed light hex — never to background-panel,
+			   which inverts contrast in dark themes (dark text on dark button). */
+			color: var(--theme-color-text-on-brand, #fff);
+			background-color: var(--theme-color-brand-primary, #2c3e50);
 			border: none;
 			border-radius: 4px;
 			cursor: pointer;
 			transition: background-color 0.15s;
 		}
 		.nonlinearconfig-login-button:hover {
-			background-color: #34495e;
+			background-color: var(--theme-color-brand-primary-hover, #34495e);
 		}
 	`,
 

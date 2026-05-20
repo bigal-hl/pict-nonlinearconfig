@@ -25,17 +25,17 @@ const _ViewConfiguration =
 			margin: 0 0 0.25em 0;
 			font-size: 2em;
 			font-weight: 300;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-about-header p {
 			margin: 0;
-			color: #7f8c8d;
+			color: var(--theme-color-text-muted, #7f8c8d);
 			font-size: 1.1em;
 		}
 		.nonlinearconfig-about h2 {
 			margin: 1.5em 0 0.5em 0;
 			font-weight: 400;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 			font-size: 1.3em;
 		}
 		.nonlinearconfig-about p {
@@ -49,8 +49,8 @@ const _ViewConfiguration =
 			margin-top: 1em;
 		}
 		.nonlinearconfig-about-tech-item {
-			background: #f8f9fa;
-			border: 1px solid #e9ecef;
+			background: var(--theme-color-background-secondary, #f8f9fa);
+			border: 1px solid var(--theme-color-border-default, #e9ecef);
 			border-radius: 4px;
 			padding: 1em;
 			text-align: center;
@@ -58,7 +58,7 @@ const _ViewConfiguration =
 		.nonlinearconfig-about-tech-item strong {
 			display: block;
 			margin-bottom: 0.25em;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-about-tech-item span {
 			font-size: 0.85em;

@@ -14,8 +14,8 @@ const _ViewConfiguration =
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			background-color: #2c3e50;
-			color: #ecf0f1;
+			background-color: var(--theme-color-background-panel, #2c3e50);
+			color: var(--theme-color-text-on-brand, #ecf0f1);
 			padding: 0 1.5em;
 			height: 56px;
 			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -27,12 +27,14 @@ const _ViewConfiguration =
 			font-size: 1.25em;
 			font-weight: 600;
 			letter-spacing: 0.02em;
-			color: #ecf0f1;
+			color: var(--theme-color-text-on-brand, #ecf0f1);
 			text-decoration: none;
 			cursor: pointer;
 		}
 		.nonlinearconfig-topbar-brand:hover {
-			color: var(--theme-color-background-panel, #fff);
+			/* text-on-brand falls to a fixed light hex — never to background-panel,
+			   which inverts contrast in dark themes (dark text on dark topbar). */
+			color: var(--theme-color-text-on-brand, #fff);
 		}
 		.nonlinearconfig-topbar-nav {
 			display: flex;
@@ -40,7 +42,7 @@ const _ViewConfiguration =
 			gap: 0.25em;
 		}
 		.nonlinearconfig-topbar-nav a {
-			color: #bdc3c7;
+			color: var(--theme-color-text-on-brand, #bdc3c7);
 			text-decoration: none;
 			padding: 0.5em 0.75em;
 			border-radius: 4px;
@@ -49,8 +51,10 @@ const _ViewConfiguration =
 			cursor: pointer;
 		}
 		.nonlinearconfig-topbar-nav a:hover {
-			background-color: #34495e;
-			color: var(--theme-color-background-panel, #fff);
+			background-color: var(--theme-color-background-hover, #34495e);
+			/* text-on-brand falls to a fixed light hex — never to background-panel,
+			   which inverts contrast in dark themes (dark text on dark hover). */
+			color: var(--theme-color-text-on-brand, #fff);
 		}
 		.nonlinearconfig-topbar-user {
 			display: flex;
@@ -59,7 +63,7 @@ const _ViewConfiguration =
 			font-size: 0.9em;
 		}
 		.nonlinearconfig-topbar-user span {
-			color: #95a5a6;
+			color: var(--theme-color-text-on-brand, #95a5a6);
 		}
 		.nonlinearconfig-topbar-user a {
 			color: var(--theme-color-status-error, #e74c3c);
@@ -70,7 +74,7 @@ const _ViewConfiguration =
 			transition: background-color 0.15s;
 		}
 		.nonlinearconfig-topbar-user a:hover {
-			background-color: #34495e;
+			background-color: var(--theme-color-background-hover, #34495e);
 		}
 	`,
 

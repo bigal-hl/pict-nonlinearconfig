@@ -24,11 +24,11 @@ const _ViewConfiguration =
 			margin: 0 0 0.25em 0;
 			font-size: 2em;
 			font-weight: 300;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-workspace-header p {
 			margin: 0;
-			color: #7f8c8d;
+			color: var(--theme-color-text-muted, #7f8c8d);
 			font-size: 1.1em;
 		}
 		.nonlinearconfig-workspace-cards {
@@ -46,12 +46,12 @@ const _ViewConfiguration =
 		}
 		.nonlinearconfig-card:hover {
 			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-			border-color: #bdc3c7;
+			border-color: var(--theme-color-border-default, #bdc3c7);
 		}
 		.nonlinearconfig-card h3 {
 			margin: 0 0 0.5em 0;
 			font-size: 1.15em;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-card p {
 			margin: 0;

@@ -14,20 +14,20 @@ const _ViewConfiguration =
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			background-color: #2c3e50;
-			color: #7f8c8d;
+			background-color: var(--theme-color-background-panel, #2c3e50);
+			color: var(--theme-color-text-on-brand, #7f8c8d);
 			padding: 0.75em 1.5em;
 			font-size: 0.8em;
-			border-top: 1px solid #34495e;
+			border-top: 1px solid var(--theme-color-border-default, #34495e);
 		}
 		.nonlinearconfig-bottombar a {
-			color: #95a5a6;
+			color: var(--theme-color-text-on-brand, #95a5a6);
 			text-decoration: none;
 			margin-left: 1em;
 			transition: color 0.15s;
 		}
 		.nonlinearconfig-bottombar a:hover {
-			color: #ecf0f1;
+			color: var(--theme-color-text-on-brand, #ecf0f1);
 		}
 		.nonlinearconfig-bottombar-links {
 			display: flex;

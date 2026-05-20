@@ -25,17 +25,17 @@ const _ViewConfiguration =
 			margin: 0 0 0.25em 0;
 			font-size: 2em;
 			font-weight: 300;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-docs-header p {
 			margin: 0;
-			color: #7f8c8d;
+			color: var(--theme-color-text-muted, #7f8c8d);
 			font-size: 1.1em;
 		}
 		.nonlinearconfig-docs h2 {
 			margin: 1.75em 0 0.5em 0;
 			font-weight: 400;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 			font-size: 1.3em;
 			border-bottom: 1px solid var(--theme-color-border-light, #eee);
 			padding-bottom: 0.35em;
@@ -43,7 +43,7 @@ const _ViewConfiguration =
 		.nonlinearconfig-docs h3 {
 			margin: 1.25em 0 0.35em 0;
 			font-weight: 600;
-			color: #34495e;
+			color: var(--theme-color-text-primary, #34495e);
 			font-size: 1.05em;
 		}
 		.nonlinearconfig-docs p {
@@ -51,15 +51,15 @@ const _ViewConfiguration =
 			line-height: 1.7;
 		}
 		.nonlinearconfig-docs code {
-			background: #f4f4f5;
+			background: var(--theme-color-background-secondary, #f4f4f5);
 			padding: 0.15em 0.4em;
 			border-radius: 3px;
 			font-size: 0.9em;
 			color: var(--theme-color-status-error, #e74c3c);
 		}
 		.nonlinearconfig-docs pre {
-			background: #2c3e50;
-			color: #ecf0f1;
+			background: var(--theme-color-background-panel, #2c3e50);
+			color: var(--theme-color-text-on-brand, #ecf0f1);
 			padding: 1.25em;
 			border-radius: 6px;
 			overflow-x: auto;
@@ -69,7 +69,7 @@ const _ViewConfiguration =
 		.nonlinearconfig-docs pre code {
 			background: none;
 			padding: 0;
-			color: #ecf0f1;
+			color: var(--theme-color-text-on-brand, #ecf0f1);
 		}
 		.nonlinearconfig-docs ul {
 			color: var(--theme-color-text-secondary, #555);
@@ -77,8 +77,8 @@ const _ViewConfiguration =
 			padding-left: 1.5em;
 		}
 		.nonlinearconfig-docs-toc {
-			background: #f8f9fa;
-			border: 1px solid #e9ecef;
+			background: var(--theme-color-background-secondary, #f8f9fa);
+			border: 1px solid var(--theme-color-border-default, #e9ecef);
 			border-radius: 6px;
 			padding: 1.25em 1.5em;
 			margin-bottom: 2em;
@@ -86,7 +86,7 @@ const _ViewConfiguration =
 		.nonlinearconfig-docs-toc h3 {
 			margin: 0 0 0.5em 0;
 			font-size: 0.95em;
-			color: #2c3e50;
+			color: var(--theme-color-text-primary, #2c3e50);
 		}
 		.nonlinearconfig-docs-toc ul {
 			margin: 0;
@@ -94,7 +94,7 @@ const _ViewConfiguration =
 			line-height: 1.8;
 		}
 		.nonlinearconfig-docs-toc a {
-			color: #3498db;
+			color: var(--theme-color-brand-primary, #3498db);
 			text-decoration: none;
 		}
 		.nonlinearconfig-docs-toc a:hover {
