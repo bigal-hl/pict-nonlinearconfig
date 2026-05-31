@@ -1,5 +1,5 @@
 {
-	"Generated": "2026-05-26T21:12:50.764Z",
+	"Generated": "2026-05-31T01:23:02.199Z",
 	"Mode": "module",
 	"GitHubOrg": "fable-retold",
 	"DefaultBranch": "master",
@@ -10,14 +10,68 @@
 		"Branch": "master",
 		"HasDocs": true,
 		"HasCover": true,
-		"Sidebar": [],
+		"Sidebar": [
+			{
+				"Title": "Getting Started",
+				"Children": [
+					{
+						"Title": "Overview",
+						"Path": "README.md"
+					},
+					{
+						"Title": "Quickstart",
+						"Path": "quickstart.md"
+					},
+					{
+						"Title": "Architecture",
+						"Path": "architecture.md"
+					}
+				]
+			},
+			{
+				"Title": "Retold Ecosystem",
+				"Children": [
+					{
+						"Title": "Pict",
+						"Path": "https://fable-retold.github.io/pict/README.md"
+					},
+					{
+						"Title": "Pict Application",
+						"Path": "https://fable-retold.github.io/pict-application/README.md"
+					},
+					{
+						"Title": "Pict View",
+						"Path": "https://fable-retold.github.io/pict-view/README.md"
+					},
+					{
+						"Title": "Pict Router",
+						"Path": "https://fable-retold.github.io/pict-router/README.md"
+					},
+					{
+						"Title": "Pict Provider",
+						"Path": "https://fable-retold.github.io/pict-provider/README.md"
+					},
+					{
+						"Title": "Pict Section Form",
+						"Path": "https://fable-retold.github.io/pict-section-form/README.md"
+					},
+					{
+						"Title": "Fable",
+						"Path": "https://fable-retold.github.io/fable/README.md"
+					}
+				]
+			}
+		],
 		"DocFiles": [
 			".nojekyll",
 			"README.md",
 			"_brand.json",
 			"_cover.md",
+			"_sidebar.md",
 			"_version.json",
+			"architecture.md",
 			"index.html",
+			"quickstart.md",
 			"retold-catalog.json",
 			"retold-keyword-index.json"
 		]
