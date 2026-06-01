@@ -91,7 +91,7 @@ this.pict.PictApplication.navigateTo('/About');
 // Render a view into the content area by identifier (called by the router)
 this.pict.PictApplication.showView('NonlinearConfig-MainWorkspace');
 
-// Stub login — accepts any non-empty credentials, then navigates to /Home
+// Stub login - accepts any non-empty credentials, then navigates to /Home
 this.pict.PictApplication.attemptLogin('user', 'password');
 
 // Clear the session and navigate to /Login
@@ -128,7 +128,7 @@ To add a configuration-workflow screen, follow the pattern the existing content 
    <a onclick="{~P~}.PictApplication.navigateTo('/Parameters')">Parameters</a>
    ```
 
-For data-entry screens — parameter editors, constraint forms, environment overrides — [pict-section-form](https://fable-retold.github.io/pict-section-form/) gives you declarative, schema-driven forms instead of hand-built `<input>` markup.
+For data-entry screens - parameter editors, constraint forms, environment overrides - [pict-section-form](https://fable-retold.github.io/pict-section-form/) gives you declarative, schema-driven forms instead of hand-built `<input>` markup.
 
 ## Code style
 
@@ -137,4 +137,4 @@ When extending this module, follow the Retold conventions used throughout the so
 - Tabs for indentation, never spaces.
 - Allman braces (opening brace on its own line).
 - `pVariable` for parameters, `tmpVariable` for locals, `libName` for requires, `_Instance` / `_ViewConfiguration` for module-scoped singletons.
-- No `addEventListener` and no `window.confirm/alert/prompt` — use inline template handlers and, where a dialog is needed, the host application's modal view.
+- No `addEventListener` and no `window.confirm/alert/prompt` - use inline template handlers and, where a dialog is needed, the host application's modal view.

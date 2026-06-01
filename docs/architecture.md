@@ -6,8 +6,8 @@
 
 It helps to keep two things separate:
 
-1. **The application shell** — real, working code in this package: a layout, navigation, routing, and login/session plumbing.
-2. **The configuration-workflow domain** — the *idea* the shell is themed around (parameters with nonlinear interdependencies). The workspace, about, and documentation views describe this domain, but the engine that resolves it is **not implemented here**. The [Branching configuration model](#branching-configuration-model) section below documents the model conceptually so the scaffold's intent is clear; treat it as a design target, not an API reference.
+1. **The application shell** - real, working code in this package: a layout, navigation, routing, and login/session plumbing.
+2. **The configuration-workflow domain** - the *idea* the shell is themed around (parameters with nonlinear interdependencies). The workspace, about, and documentation views describe this domain, but the engine that resolves it is **not implemented here**. The [Branching configuration model](#branching-configuration-model) section below documents the model conceptually so the scaffold's intent is clear; treat it as a design target, not an API reference.
 
 ## Application shell
 
@@ -62,7 +62,7 @@ The layout view (`NonlinearConfig-Layout`) owns the page structure. It renders t
 ```
 #NonlinearConfig-Application-Container        (root, flex column, min-height 100vh)
 ├── #NonlinearConfig-TopBar-Container         (flex-shrink: 0)
-├── #NonlinearConfig-Content-Container        (flex: 1  — the swappable region)
+├── #NonlinearConfig-Content-Container        (flex: 1  - the swappable region)
 └── #NonlinearConfig-BottomBar-Container      (flex-shrink: 0)
 ```
 
@@ -86,11 +86,11 @@ onAfterRender(pRenderable, pRenderDestinationAddress, pRecord, pContent)
 }
 ```
 
-The top bar and bottom bar are **persistent** — they render once into their containers and stay. Only the content region is swapped.
+The top bar and bottom bar are **persistent** - they render once into their containers and stay. Only the content region is swapped.
 
 ### Content views
 
-The four content views — workspace, login, about, documentation — each render into `#NonlinearConfig-Content-Container` with `RenderMethod: "replace"`, so showing one replaces whatever was there. Each is a standard `pict-view`: CSS, templates, and renderables defined in a `_ViewConfiguration` object, with a thin class that mostly just extends `pict-view`.
+The four content views - workspace, login, about, documentation - each render into `#NonlinearConfig-Content-Container` with `RenderMethod: "replace"`, so showing one replaces whatever was there. Each is a standard `pict-view`: CSS, templates, and renderables defined in a `_ViewConfiguration` object, with a thin class that mostly just extends `pict-view`.
 
 The top bar is the one content-aware view with logic: its `onAfterRender` reads `AppData.NonlinearConfig.User.LoggedIn` and renders either a logged-in template (display name + logout) or a logged-out template (login link) into its user area.
 
@@ -119,10 +119,10 @@ Navigation flows in one direction:
 
 ```
 user clicks a nav link
-  → {~P~}.PictApplication.navigateTo('/About')
-    → PictRouter.navigate('/About')      (updates the hash, matches the route)
-      → route template runs {~LV:...showView('NonlinearConfig-About')~}
-        → the About view renders into #NonlinearConfig-Content-Container
+  -> {~P~}.PictApplication.navigateTo('/About')
+    -> PictRouter.navigate('/About')      (updates the hash, matches the route)
+      -> route template runs {~LV:...showView('NonlinearConfig-About')~}
+        -> the About view renders into #NonlinearConfig-Content-Container
 ```
 
 Because the router owns the hash, deep links (opening `dist/index.html#/About` directly) work: the layout's `onAfterRender` calls `PictRouter.resolve()` after the shell is in place, and the router renders the view matching whatever hash is present.
@@ -154,7 +154,7 @@ this.pict.AppData.NonlinearConfig =
 };
 ```
 
-Views read and write this address rather than holding their own instance state — for example the top bar reads `AppData.NonlinearConfig.User.LoggedIn` to choose which user-area template to render. This keeps the session observable and serializable, per Pict conventions.
+Views read and write this address rather than holding their own instance state - for example the top bar reads `AppData.NonlinearConfig.User.LoggedIn` to choose which user-area template to render. This keeps the session observable and serializable, per Pict conventions.
 
 ### Login
 
@@ -162,7 +162,7 @@ Views read and write this address rather than holding their own instance state �
 
 ## Branching configuration model
 
-> The model in this section is the **design target** the scaffold is themed around. It is described in the workspace, about, and in-app documentation views, but the resolution engine is **not implemented in this package**. Use this as the conceptual map for what you would build on top of the shell — not as a record of existing APIs.
+> The model in this section is the **design target** the scaffold is themed around. It is described in the workspace, about, and in-app documentation views, but the resolution engine is **not implemented in this package**. Use this as the conceptual map for what you would build on top of the shell - not as a record of existing APIs.
 
 The motivating problem: in a distributed system, configuration parameters often depend on each other. A database connection-pool size depends on the number of application instances, which depends on the expected traffic profile. Flat key-value stores treat these as independent, which lets them drift out of sync.
 
@@ -186,7 +186,7 @@ The intended model treats configuration as a **directed acyclic graph (DAG)** ra
 - **Cycles are errors.** Circular dependencies are meant to be detected and reported before any change is applied.
 - **Environments layer over the graph.** Configuration profiles (development, staging, production) are intended to inherit from a base and override specific nodes.
 
-The shipped workspace dashboard names the surfaces this model would need — Configuration Graphs, Dependency Chains, Parameter Sets, Environment Manager, Import / Export, and Validation & Audit — as cards. Today those cards are descriptive; building them out is the purpose of the scaffold.
+The shipped workspace dashboard names the surfaces this model would need - Configuration Graphs, Dependency Chains, Parameter Sets, Environment Manager, Import / Export, and Validation & Audit - as cards. Today those cards are descriptive; building them out is the purpose of the scaffold.
 
 ### Where the Retold ecosystem fits
 
