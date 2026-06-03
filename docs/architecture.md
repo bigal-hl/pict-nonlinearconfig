@@ -59,12 +59,8 @@ The two `AutoRender...: false` flags matter: the application takes manual contro
 
 The layout view (`NonlinearConfig-Layout`) owns the page structure. It renders three empty containers into the root element, then renders the child views into them:
 
-```
-#NonlinearConfig-Application-Container        (root, flex column, min-height 100vh)
-├── #NonlinearConfig-TopBar-Container         (flex-shrink: 0)
-├── #NonlinearConfig-Content-Container        (flex: 1  - the swappable region)
-└── #NonlinearConfig-BottomBar-Container      (flex-shrink: 0)
-```
+<!-- bespoke diagram: edit diagrams/the-three-zone-layout-shell.mmd or .hints.json, then: npx pict-renderer-graph build modules/pict/pict-nonlinearconfig/docs -->
+![The three-zone layout shell](diagrams/the-three-zone-layout-shell.svg)
 
 The layout's `onAfterRender` is where the composition happens, and where the router is first resolved:
 
